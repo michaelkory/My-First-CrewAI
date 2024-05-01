@@ -1,0 +1,10 @@
+# agent_list.yaml
+
+# Provide the name of each agent in lowercase, use "_" for spaces, always ending in "_agent".
+# Provide a clear and concise summary of each agent in 25 words or less.
+
+name_of_the_first_agent:
+  summary: Provide a clear and concise summary of the agent.
+    
+name_of_the_next_agent:
+  summary: Provide a clear and concise summary of the agent.

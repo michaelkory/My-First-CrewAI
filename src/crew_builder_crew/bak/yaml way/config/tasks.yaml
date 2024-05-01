@@ -1,0 +1,53 @@
+#tasks.yaml
+
+create_crewai_crew_task:
+  description: >
+    - Analyze the given crew purpose and details to determine the required agents and tasks. 
+    - Design a crew structure in Python, defining agent and task names that indicate their roles and purposes. 
+    - Follow specific naming conventions and create a `crew.py` file with the corresponding Python code.
+    ## crew purpose: <new_crew_purpose>{new_crew_purpose}</new_crew_purpose>
+    ## crew details: <new_crew_details>{new_crew_details}</new_crew_details>
+    # Your final submission should be the complete `crew.py` file, and only the `crew.py` file, meticulously structured and documented.
+
+review_crewai_crew_task:
+  description: >
+    - Analyze the given crew purpose and details to determine the required agents and tasks. 
+    - Conduct a thorough examination of the provided code to identify necessary agents and tasks.
+    - Conduct a comprehensive review to detect errors, including logic, syntax, and security vulnerabilities.
+    - Ensure the code is complete and functional.
+    ## crew purpose: <new_crew_purpose>{new_crew_purpose}</new_crew_purpose>
+    ## crew details: <new_crew_details>{new_crew_details}</new_crew_details>
+    # Your final submission should be the complete `crew.py` file, and only the `crew.py` file, meticulously structured and documented.
+
+create_crewai_tasks_task:
+  description: >
+    - Create a well-structured `tasks.yaml` file that clearly outlines each task defined in the preceeding steps.
+    - This task focuses on concise and impactful descriptions, optimizing token usage while maintaining clarity.
+    - Emphasize crucial aspects of each task using markdown formatting. 
+    # ENSURE THAT THE NAMES OF THE TASKS ARE CONSISTENT WITH THE NAMES OF THE TASKS DEFINED IN THE PRECEDING STEPS!
+    # Your final submission should be the complete `tasks.yaml` file, and only the `tasks.yaml` file, meticulously structured and documented.
+
+review_crewai_tasks_task:
+  description: >
+    - Conduct a thorough examination of the `tasks.yaml` file to ensure that it clearly outlines each task defined in the preceeding steps.
+    - Conduct a comprehensive review to ensure that descriptions are concise and impactful, optimized for token usage while maintaining clarity.
+    - Ensure the yaml is complete and functional, and crucial aspects of each task's attributes are emphasized using markdown formatting. 
+    # ENSURE THAT THE NAMES OF THE TASKS ARE CONSISTENT WITH THE NAMES OF THE TASKS DEFINED IN THE PRECEDING STEPS!
+    # Your final submission should be the complete `tasks.yaml` file, and only the `tasks.yaml` file, meticulously structured and documented.
+
+create_crewai_agents_task:
+  description: >
+    - Create a well-structured `agents.yaml` file that clearly defines the attributes of each agent defined in the preceeding steps.
+    - This task focuses on concise and impactful roles, goals, and backstories, optimizing token usage while maintaining clarity.
+    - Emphasize crucial aspects of each agents attributes using markdown formatting. 
+    # ENSURE THAT THE NAMES OF THE AGENTS ARE CONSISTENT WITH THE NAMES OF THE AGENTS DEFINED IN THE PRECEDING STEPS!
+    # Your final submission should be the complete `agents.yaml` file, and only the `agents.yaml` file, meticulously structured and documented.
+
+review_crewai_agents_task:
+  description: >
+    - Conduct a thorough examination of the `agents.yaml` file that clearly defines the attributes of each agent defined in the preceeding steps.
+    - Conduct a comprehensive review to ensure that the roles, goals, and backstories are concise and impactful, optimized for token usage while maintaining clarity.
+    - Ensure the yaml is complete and functional, and crucial aspects of each agent's attributes are emphasized using markdown formatting. 
+    # ENSURE THAT THE NAMES OF THE AGENTS ARE CONSISTENT WITH THE NAMES OF THE AGENTS DEFINED IN THE PRECEDING STEPS!
+    # Your final submission should be the complete `agents.yaml` file, and only the `agents.yaml` file, meticulously structured and documented.
+    

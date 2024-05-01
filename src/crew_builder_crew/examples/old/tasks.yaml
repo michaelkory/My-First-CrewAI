@@ -1,0 +1,20 @@
+# tasks.yaml
+
+# Write a clear, detailed task description for a CrewAI agent to complete a specific deliverable. The description should include:
+
+## - **Clear deliverables**: Specify the expected end result or output from completing the task.
+## - **Concise language**: Keep the description succinct and to the point. Avoid vague terms and focus on essential information.
+
+# ENSURE THAT THE NAMES OF THE TASKS ARE CONSISTENT WITH THE NAMES OF THE TASKS DEFINED IN THE PRECEDING STEPS!
+
+name_of_the_first_task:
+  description: >
+    - Specify the expected end result or output from completing the task.
+    - Avoid vague terms and focus on essential information.
+    - Keep the description succinct and to the point. 
+    
+name_of_the_next_task:
+  description: >
+    - Specify the expected end result or output from completing the task.
+    - Avoid vague terms and focus on essential information.
+    - Keep the description succinct and to the point. 

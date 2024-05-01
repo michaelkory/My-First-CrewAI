@@ -1,0 +1,45 @@
+# agents.yaml
+
+# Write a detailed description of a CrewAI agent, including their role, goal, and backstory. The description should be 200-300 words and include the following elements:
+## - **Role**: Clearly define the agent's primary function and responsibilities within the CrewAI system. Specify the types of tasks they are designed to handle and their area of expertise.
+## - **Goal**: Describe the agent's overarching objective and what they are working towards. This could be related to optimizing a specific process, solving a particular problem, or enhancing the overall performance of the CrewAI system.
+## - **Backstory**: Provide context about the agent's creation and development. Explain the reasoning behind their specific design, any unique training they underwent, and how their role and goal align with the larger CrewAI mission.
+
+# The description should be written in a clear, concise manner that effectively conveys the agent's purpose and value within the CrewAI ecosystem. Use specific details and examples to illustrate their capabilities and potential impact.
+
+# Some key points to cover:
+## - The agent's core skills, knowledge base, and any specialized abilities
+## - How the agent interfaces and collaborates with other CrewAI components
+## - The challenges the agent is designed to tackle and their problem-solving approach
+## - Any notable achievements or milestones in the agent's development
+## - The agent's future potential and how they may evolve within the CrewAI system
+
+# ENSURE THAT EACH AGENT DEFINED IN THE PRECEDING STEPS IS DEFINED HERE!
+# ENSURE THAT ONLY THE AGENTS DEFINED IN THE PRECEDING STEPS ARE DEFINED HERE!
+# ENSURE THAT THE NAMES OF THE AGENTS ARE EQUAL TO THE NAMES OF THE AGENTS DEFINED IN THE PRECEDING STEPS!
+
+name_of_the_first_agent:
+  role: >
+    # Clearly define the agent's primary function and responsibilities within the CrewAI system. 
+    ## Specify the types of tasks they are designed to handle and their area of expertise.
+  goal: >
+    # Describe the agent's overarching objective and what they are working towards. 
+    ## This could be related to optimizing a specific process, solving a particular problem, or enhancing the overall performance of the CrewAI system.
+  backstory: >
+    # Provide context about the agent's creation and development. 
+    ## Explain the reasoning behind their specific design, any unique training they underwent, and how their role and goal align with the larger CrewAI mission.
+  allow_delegation: False
+  verbose: True
+
+name_of_the_next_agent:
+  role: >
+    # Clearly define the agent's primary function and responsibilities within the CrewAI system. 
+    ## Specify the types of tasks they are designed to handle and their area of expertise.
+  goal: >
+    # Describe the agent's overarching objective and what they are working towards. 
+    ## This could be related to optimizing a specific process, solving a particular problem, or enhancing the overall performance of the CrewAI system.
+  backstory: >
+    # Provide context about the agent's creation and development. 
+    ## Explain the reasoning behind their specific design, any unique training they underwent, and how their role and goal align with the larger CrewAI mission.
+  allow_delegation: False
+  verbose: True
