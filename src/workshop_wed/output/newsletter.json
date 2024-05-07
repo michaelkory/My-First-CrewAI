@@ -1,0 +1,74 @@
+{
+    "workshop": {
+        "title": "Ansible Automation Platform for Red Hat Enterprise Linux 90-min Technical Workshop",
+        "overview": "Who is this workshop best for?\nIf you\u2019re new to Red Hat\u00ae Ansible\u00ae Automation Platform, but want a quicker version of the original Red Hat Enterprise Linux\u00ae workshop, this 90-minute workshop provides you with fewer exercises, focused on cloud provisioning, converting bash/shell commands to Ansible, and using Red Hat Enterprise Linux system roles. This workshop is for those who want to learn the basics of Ansible Automation Platform, understand how it works, and how it can be used to automate basic tasks. In addition, we\u2019ll differentiate between the upstream Ansible open source project and Ansible Automation Platform. If you have always wanted to know more about Ansible Automation Platform, this workshop is for you.",
+        "date": "05/15/2024",
+        "time": "10:00 AM PDT",
+        "registration": "https://events.redhat.com/profile/form/index.cfm?PKformID=0x1055204abcd",
+        "summary": "This 90-minute workshop is designed for those new to Red Hat Ansible Automation Platform. It provides a quicker version of the original Red Hat Enterprise Linux workshop, focusing on cloud provisioning, converting bash/shell commands to Ansible, and using Red Hat Enterprise Linux system roles. Attendees will learn the basics of Ansible Automation Platform, understand how it works, and how it can be used to automate basic tasks. The workshop will also differentiate between the upstream Ansible open source project and Ansible Automation Platform.",
+        "final_copy": "Get ready to unlock the power of Ansible Automation Platform! Join our 90-minute technical workshop, designed specifically for those new to Red Hat Ansible Automation Platform. You'll learn the basics of Ansible Automation Platform, understand how it works, and how it can be used to automate basic tasks. Plus, discover how to leverage cloud provisioning and system roles to streamline your workflow. Don't miss this opportunity to take your automation skills to the next level!"
+    },
+    "training": {
+        "title": "Event-Driven Architecture with Apache Kafka and Red Hat OpenShift Application Services Technical Overview | AD082",
+        "description": "Event-Driven Architecture with Apache Kafka and Red Hat OpenShift Application Services Technical Overview (AD082) is a no-cost, on-demand video course\u00a0that provides an introduction to the benefits of using an event-driven architecture and demonstrates how Red Hat Cloud Services, specifically Red Hat OpenShift Application Services, can simplify building, deploying, and scaling cloud-native applications.",
+        "course_content": "By the end of this course learners will have a basic understanding of: Event-driven architecture (EDA) and the benefits of using this style of architecture. Topics covered include reduced coupling, scalability, and resilience. Apache Kafka terminology such as cluster, brokers, topics, messages, partitions, and producers and consumers. Red Hat OpenShift Application Services and how they can speed up your path to adopting an EDA.",
+        "registration": "https://www.redhat.com/en/services/training/ad082-event-driven-architecture-apache-kafka-red-hat-openshift-application-services-technical-overview",
+        "summary": "This on-demand video course provides an introduction to the benefits of using an event-driven architecture, including reduced coupling, scalability, and resilience. It covers key Apache Kafka concepts and demonstrates how Red Hat OpenShift Application Services can simplify building, deploying, and scaling cloud-native applications.",
+        "final_copy": "Unlock the Power of Event-Driven Architecture with Apache Kafka and Red Hat OpenShift Application Services. Discover how to build, deploy, and scale cloud-native applications with ease. Learn about the benefits of event-driven architecture, including reduced coupling, scalability, and resilience. Get hands-on experience with Apache Kafka and Red Hat OpenShift Application Services, and take your skills to the next level."
+    },
+    "assessment": {
+        "title": "OpenShift Administration",
+        "description": "Want to learn how to deploy, administer and manage container based applications on OpenShift? This assessment helps select the course most appropriate for your current skills and use case.",
+        "registration": "https://skills.ole.redhat.com/en/assessment/8aae8aff-e0fd-42d7-b280-8aca42cc5f4b",
+        "summary": "The OpenShift Administration skills assessment helps determine the appropriate training course for learners interested in deploying, administering, and managing container-based applications on the OpenShift platform. The assessment evaluates the user's current skills and recommends the most suitable course to enhance their OpenShift expertise.",
+        "final_copy": "Unlock the full potential of OpenShift with our comprehensive skills assessment! Discover the perfect training course to enhance your expertise in deploying, administering, and managing container-based applications on the OpenShift platform."
+    },
+    "ansible_blog": {
+        "title": "Transitioning from Chef Cookbooks to Ansible Playbooks: A seamless journey",
+        "description": "The shift from Chef to Red Hat Ansible Automation Platform has become a strategic choice for many organizations seeking simplicity, scalability and ease of use for configuration management and automation tools. This article explores the process of converting Chef cookbooks into Ansible Playbooks, providing insights and guidance for a smooth and efficient transition.Understanding the differencesChef and Ansible Automation Platform, while both prominent tools share the common goal of automating infrastructure tasks, they differ in their approaches to configuration management and exhibit distinct",
+        "published": "Mon, 22 Apr 2024 00:00:00 +0000",
+        "link": "https://www.redhat.com/en/blog/transitioning-chef-cookbooks-ansible-playbooks-seamless-journey",
+        "summary": "This blog post discusses the process of transitioning from Chef Cookbooks to Ansible Playbooks, highlighting the benefits of the Red Hat Ansible Automation Platform in terms of simplicity, scalability, and ease of use for configuration management and automation. It provides insights and guidance for a smooth and efficient transition, exploring the differences between Chef and Ansible Automation Platform and how to convert Chef cookbooks into Ansible Playbooks.",
+        "final_copy": "Transitioning from Chef Cookbooks to Ansible Playbooks: A seamless journey. This blog post discusses the process of transitioning from Chef Cookbooks to Ansible Playbooks, highlighting the benefits of the Red Hat Ansible Automation Platform in terms of simplicity, scalability, and ease of use for configuration management and automation."
+    },
+    "ansible_video": {
+        "title": "Streamline VMware to OpenShift Virtualization Migration with Ansible Automation Platform",
+        "description": "Learn how to seamlessly migrate your VMware VMs to OpenShift Virtualization using the power of Ansible Automation Platform. Starting with an architectural overview from day zero to day two, we focus on automating and simplifying the day one migration process. Watch as we set up the necessary prerequisites, use the Migration Toolkit for Virtualization, and leverage a fully customizable Ansible survey to automate the entire migration process!\n\nWith the power of Ansible Automation Platform you can minimize manual steps, eliminate human errors, and maintain consistency as you scale your migration efforts.\n\nLearn more about Red Hat OpenShift Virtualization here: https://red.ht/3UjCTS8",
+        "published": "2024-04-26T19:56:23+00:00",
+        "link": "https://www.youtube.com/watch?v=oaKMF4s3d3s",
+        "summary": "This video demonstrates how to use Ansible Automation Platform to seamlessly migrate VMware VMs to Red Hat OpenShift Virtualization. It covers the entire migration process, from setting up prerequisites to leveraging the Migration Toolkit for Virtualization and a customizable Ansible survey to automate the migration. The goal is to minimize manual steps, eliminate errors, and maintain consistency as you scale your migration efforts.",
+        "final_copy": "Streamline VMware to OpenShift Virtualization Migration with Ansible Automation Platform. Learn how to seamlessly migrate your VMware VMs to OpenShift Virtualization using the power of Ansible Automation Platform. This video demonstrates how to use Ansible Automation Platform to seamlessly migrate VMware VMs to Red Hat OpenShift Virtualization, covering the entire migration process from setting up prerequisites to leveraging the Migration Toolkit for Virtualization and a customizable Ansible survey to automate the migration."
+    },
+    "openshift_blog": {
+        "title": "Building Powerful Applications with Weaviate and Red Hat OpenShift: A Retrieval-Augmented Generation Workflow",
+        "description": "In the field of artificial intelligence (AI) and machine learning (ML), the goal is to generate applications that give human-like responses to human interaction. One promising approach to achieving this is retrieval-augmented generation (RAG), which combines the strengths of existing methods (specifically, retrieval and generation-based models) to produce accurate and contextually relevant output from a large language model (LLM). This allows an organization\u2019s private data sources to drive the behavior and performance of an LLM as real-time data becomes available. Leveraging the capabilities",
+        "published": "Thu, 02 May 2024 00:00:00 +0000",
+        "link": "https://www.redhat.com/en/blog/building-powerful-applications-weaviate-and-red-hat-openshift-retrieval-augmented-generation-workflow",
+        "summary": "This blog post discusses how retrieval-augmented generation (RAG) can be used to build powerful AI applications that leverage an organization's private data sources to drive the behavior and performance of a large language model (LLM). It highlights the benefits of combining retrieval and generation-based models to produce accurate and contextually relevant output, allowing organizations to leverage their own data to enhance the capabilities of their AI systems.",
+        "final_copy": "Building powerful AI applications with Weaviate and Red Hat OpenShift: A Retrieval-Augmented Generation Workflow. This blog post discusses how retrieval-augmented generation (RAG) can be used to build powerful AI applications that leverage an organization's private data sources to drive the behavior and performance of a large language model (LLM)."
+    },
+    "openshift_video": {
+        "title": "GitOps Guide to the Galaxy (ep. 75) | What's new with Keptn?",
+        "description": "Hilliary and Jonny are joined by Florian Bacher and Giovanni Liva from Dynatrace to discuss the opensource project Keptn, what's changed since we last looked, and what you should know about it.",
+        "published": "2024-05-03T07:10:58+00:00",
+        "link": "https://www.youtube.com/watch?v=93-NjUR5X5A",
+        "summary": "This video discusses the open-source project Keptn, including what's new and what users should know. Keptn experts from Dynatrace join the Red Hat hosts to provide an overview of the project and its latest developments.",
+        "final_copy": "This video explores the open-source project Keptn, featuring experts from Dynatrace who provide an overview of the project and its latest developments."
+    },
+    "rhel_blog": {
+        "title": "Beyond the lingo:  What does Red Hat Insights and FedRAMP mean for your workload?",
+        "description": "Here at Red Hat, we\u2019ve spent over a decade building up the power of Red Hat Insights, making it one of the most valuable pieces of technology included in your Red Hat subscription.  We\u2019ve integrated with industry-leading technologies like IBM X-Force, we\u2019ve grown invaluable data sets from our own support cases, and we\u2019ve extended our reach to deliver Insights wherever you work. See What the Insights portfolio can do for you.One thing that's been a blocker for US government customers and contractors has been FedRAMP. But that's a blocker no more! Through a long process of sponsorship, d",
+        "published": "Thu, 02 May 2024 00:00:00 +0000",
+        "link": "https://www.redhat.com/en/blog/beyond-lingo-what-does-red-hat-insights-and-fedramp-mean-your-workload",
+        "summary": "Red Hat Insights is a valuable technology included in Red Hat subscriptions, providing insights and data from various sources. The blog post discusses how Red Hat Insights and FedRAMP compliance can benefit workloads, especially for US government customers and contractors.",
+        "final_copy": "Discover how Red Hat Insights and FedRAMP compliance can benefit your workloads, especially if you're a US government customer or contractor. Learn more about the valuable technology included in your Red Hat subscription."
+    },
+    "rhel_video": {
+        "title": "Image mode for Red Hat Enterprise Linux",
+        "description": "Image mode for Red Hat Enterprise Linux is a new deployment method that takes a container-native approach to deliver the OS as a bootc container image. It builds on the success of open source projects such as bootc, which manages the installation and updating of hosts in any part of the hybrid cloud, to create a deployment model that fits seamlessly into container-native workflows. This approach addresses challenges in managing Linux at scale, from pushing patches to disparate locations to disconnects between operations teams and the application development cycle.\n\nLearn more: https://developers.redhat.com/products/rhel-image-mode/getting-started",
+        "published": "2024-05-07T13:45:17+00:00",
+        "link": "https://www.youtube.com/watch?v=Rby_0yF9b5Y",
+        "summary": "Red Hat Enterprise Linux is introducing a new 'image mode' deployment method that takes a container-native approach. This allows the OS to be delivered as a bootc container image, building on open source projects like bootc to simplify management and integration with container-native workflows. This addresses challenges in managing Linux at scale, such as pushing patches and aligning operations with application development.",
+        "final_copy": "Red Hat Enterprise Linux introduces a new 'image mode' deployment method, delivering the OS as a bootc container image. This approach simplifies management and integration with container-native workflows, addressing challenges in managing Linux at scale."
+    }
+}

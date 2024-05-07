@@ -74,7 +74,7 @@ class CrewBuilderTasks:
 
                 ## Objective
                 Your next task is to provide a list of agents to fulfill the Crew Purpose and Crew Details.
-                      
+                                                                  
                 ## Crew Purpose
                 <crew_purpose>{crew_purpose}</crew_purpose>
 
@@ -103,7 +103,7 @@ class CrewBuilderTasks:
                       
                 ## Objective
                 Your task is to carefully review the provided list of agents designed to fulfill the Crew Purpose and Crew Details.
-                      
+                                            
                 ## Crew Purpose
                 <crew_purpose>{crew_purpose}</crew_purpose>
 

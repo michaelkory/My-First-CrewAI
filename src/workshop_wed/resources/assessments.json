@@ -1,0 +1,46 @@
+{
+    "Managing Enterprise Automation": {
+      "description": "This assessment helps identify the next course that's right for you when preparing to learn how to architect, install, configure, and manage Red Hat Ansible Automation Platform in order to scale out your organization's use of Ansible automation.",
+      "registration": "https://skills.ole.redhat.com/en/assessment/b118d4ca-fac2-40e5-b4b3-b9c671ccf66c"
+    },
+    "OpenShift Developer": {
+      "description": "Develop cloud-native applications for OpenShift! This assessment helps select the course most appropriate for your current skills and use case.",
+      "registration": "https://skills.ole.redhat.com/en/assessment/08915950-dbc1-44a8-a8bd-7eeaf4234498"
+    },
+    "OpenShift Administration": {
+      "description": "Want to learn how to deploy, administer and manage container based applications on OpenShift? This assessment helps select the course most appropriate for your current skills and use case.",
+      "registration": "https://skills.ole.redhat.com/en/assessment/8aae8aff-e0fd-42d7-b280-8aca42cc5f4b"
+    },
+    "Advanced RHEL Management": {
+      "description": "Implement and manage advanced technologies at scale on RHEL.",
+      "registration": "https://skills.ole.redhat.com/en/assessment/14dd23cc-e5ea-4a66-9642-52b6d143f2fb"
+    },
+    "JBoss EAP Development and Administration": {
+      "description": "Do you want to develop Java EE applications and administer JBoss EAP servers? This assessment helps select the course most appropriate for your current skills and use case.",
+      "registration": "https://skills.ole.redhat.com/en/assessment/03e7e7e5-c997-446e-9e84-f169e0a4f1f3"
+    },
+    "Enterprise Integration Developer": {
+      "description": "Develop enterprise integration applications based on Apache Camel, Apache Kafka and OpenShift Serverless (Knative).",
+      "registration": "https://skills.ole.redhat.com/en/assessment/8d292bd3-94af-40ee-b97b-71288f254518"
+    },
+    "Cloud-native Applications Developer": {
+      "description": "Develop cloud-native Java applications based on microservices, serverless and event driven architectures. Also learn how to deploy CI/CD pipelines on OpenShift.",
+      "registration": "https://skills.ole.redhat.com/en/assessment/a2c9294f-ff2e-40ab-8165-2fc95b588045"
+    },
+    "OpenStack Administration": {
+      "description": "Operate and manage a production Red Hat OpenStack Platform infrastructure.",
+      "registration": "https://skills.ole.redhat.com/en/assessment/3a450da0-2bcb-419d-b611-9e45b4435dd5"
+    },
+    "Developing Ansible Automation": {
+      "description": "Write automation for IT tasks using Red Hat Ansible Automation Platform! This assessment helps select the course most appropriate for your current skills and use case.",
+      "registration": "https://skills.ole.redhat.com/en/assessment/d2d00652-a0c1-4e09-af9f-e4fb5c69ba9a"
+    },
+    "Advanced OpenShift Administration": {
+      "description": "Advanced topics of OpenShift administration: manage storage, virtual machines, multiple clusters, or provisioning of self-managed OpenShift clusters.",
+      "registration": "https://skills.ole.redhat.com/en/assessment/55fd73d8-c657-42fe-a89f-37044ab758a2"
+    },
+    "RHEL System Administration": {
+      "description": "Red Hat Enterprise Linux is the foundation for Open Source technologies. The RHEL curriculum starts with the Red Hat Certified System Administrator track.",
+      "registration": "https://skills.ole.redhat.com/en/assessment/cc1cd6cd-05b0-4618-9517-16c680f9ba0e"
+    }
+}
