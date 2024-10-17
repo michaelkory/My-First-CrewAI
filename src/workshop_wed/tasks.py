@@ -5,12 +5,12 @@ import json
 
 from tools.html_tools import create_newsletter_html
 from tools.json_tools import get_section_from_json,find_assessment_by_title
-from tools.web_tools import get_blog_details, get_training_details, get_video_details, get_workshop_details
+from tools.web_tools import get_blog_details_from_feed, get_blog_details_from_url, get_training_details, get_video_details_from_feed, get_video_details_from_url, get_workshop_details
 
 class RedHatNewsletterCrewTasks:
 
-    def summarize_workshop_task(self, agent, target_date):
-        workshop_details = get_workshop_details(target_date)
+    def summarize_workshop_task(self, agent, target_date, target_url):
+        workshop_details = get_workshop_details(target_date, target_url)
 
         if not workshop_details:
             logging.error("Failed to fetch or parse workshop details.")
@@ -59,19 +59,26 @@ class RedHatNewsletterCrewTasks:
         
         return Task(
             description=dedent(f"""
-                # Red Hat Newsletter: Enhance Workshop Summary
+                # Red Hat Newsletter: Refine Workshop Summary
                 
                 ## Objective 
-                Refine the summary of the upcoming Red Hat Enterprise Linux Technical Workshop without altering the original content, creating an additional version for the weekly newsletter that is engaging and informative.
+                Enhance the summary of the upcoming Red Hat Enterprise Linux Technical Workshop, creating an additional version for the weekly newsletter that is informative, engaging, and aligned with Red Hat's professional brand voice.
 
                 ## Instructions
-                - Start by reviewing the existing summary and the detailed overview provided.
+                - Review the existing summary and the detailed overview provided.
                 - Develop a 'final_copy' that:
-                    - Constructs a new narrative structure to dynamically emphasize key points.
-                    - Utilizes engaging and persuasive language to captivate the newsletter's audience.
-                    - Highlights practical applications like cloud provisioning and system roles, making them relatable and appealing.
-                - Ensure the 'final_copy' complements the existing 'summary', providing a clear, comprehensive, yet succinct depiction of the workshop's value.
-                - Retain the original 'summary' in its entirety to serve as a reference or for other purposes.
+                    - Restructures the content to effectively highlight key points and takeaways.
+                    - Uses clear, concise, and technically precise language to communicate the workshop's value to the newsletter's readers.
+                    - Emphasizes practical applications like cloud provisioning and system roles, making them relevant and accessible to the target audience.
+                    - Adopts a tone similar to Erin Kissane's writing in "The Elements of Content Strategy" - authoritative, informative, and professional.
+                - Ensure the 'final_copy' complements the existing 'summary', providing a comprehensive yet succinct overview of the workshop.
+                - Retain the original 'summary' unchanged to serve as a reference.
+
+                ## Voice and Tone Guidelines
+                - Write in a voice that reflects Red Hat's brand: knowledgeable, reliable, and customer-centric.
+                - Use a professional tone that is informative and engaging without being overly casual or sales-oriented.
+                - Focus on clearly communicating the technical value and practical applications of the workshop.
+                - Example of desired tone: "Join our 90-minute workshop designed for those new to Red Hat Ansible Automation Platform. You'll gain a foundational understanding of Ansible Automation Platform, its components, and how it can streamline your automation workflows. Explore practical use cases like cloud provisioning and converting bash/shell commands to Ansible. This workshop provides a hands-on introduction to help you get started with Ansible Automation Platform."
 
                 ## Expected Output Format
                 Return the completed and updated `workshop_details` dictionary in the specified JSON format:
@@ -135,20 +142,27 @@ class RedHatNewsletterCrewTasks:
         expected_output = json.dumps({"data": {"training": training_details}}, indent=4)
         
         return Task(
-            description=dedent("""
+            description=dedent(f"""
                 # Red Hat Newsletter Crew: Step 4 - Enhance Training Summary
                             
                 ## Objective 
-                Refine the summary of the upcoming Red Hat Training without altering the original content, creating an additional version for the weekly newsletter that is engaging and informative.
+                Refine the summary of the upcoming Red Hat Training, creating an additional version for the weekly newsletter that is informative, engaging, and aligned with Red Hat's professional brand voice.
 
                 ## Instructions
-                - Start by reviewing the existing summary and the detailed course_content provided.
+                - Review the existing summary and the detailed course_content provided.
                 - Develop a 'final_copy' that:
-                    - Constructs a new narrative structure to dynamically emphasize key points.
-                    - Utilizes engaging and persuasive language to captivate the newsletter's audience.
-                    - Highlights practical applications like cloud provisioning and system roles, making them relatable and appealing.
-                - Ensure the 'final_copy' complements the existing 'summary', providing a clear, comprehensive, yet succinct depiction of the training's value.
-                - Retain the original 'summary' in its entirety to serve as a reference or for other purposes.
+                    - Restructures the content to effectively highlight key points and takeaways.
+                    - Uses clear, concise, and technically precise language to communicate the training's value to the newsletter's readers.
+                    - Emphasizes practical applications like cloud provisioning and system roles, making them relevant and accessible to the target audience.
+                    - Adopts a tone similar to Red Hat's official training materials - authoritative, informative, and focused on customer success.
+                - Ensure the 'final_copy' complements the existing 'summary', providing a comprehensive yet succinct overview of the training.
+                - Retain the original 'summary' unchanged to serve as a reference.
+
+                ## Voice and Tone Guidelines
+                - Write in a voice that reflects Red Hat's brand: knowledgeable, reliable, and customer-centric.
+                - Use a professional tone that is informative and engaging without being overly casual or sales-oriented.
+                - Focus on clearly communicating the technical value and practical applications of the training.
+                - Example of desired tone: "Enhance your skills with our Red Hat Training course. This hands-on training dives deep into [key topics], equipping you with the knowledge and best practices to [key benefits]. Through practical labs and expert instruction, you'll learn how to [key applications] effectively. Whether you're a [target audience], this course will help you [key outcomes] and accelerate your success with Red Hat technologies."
 
                 ## Expected Output Format
                 Return the completed and updated `training_details` dictionary in the specified JSON format:
@@ -216,16 +230,23 @@ class RedHatNewsletterCrewTasks:
                 # Red Hat Newsletter Crew: Step 6 - Enhance Skills Assessment
                             
                 ## Objective 
-                Refine the summary of the upcoming Red Hat Skills Assessment without altering the original content, creating an additional version for the weekly newsletter that is engaging and informative.
+                Refine the summary of the upcoming Red Hat Skills Assessment, creating an additional version for the weekly newsletter that is informative, engaging, and aligned with Red Hat's professional brand voice.
 
                 ## Instructions
-                - Start by reviewing the existing summary and the detailed course_content provided.
+                - Review the existing summary and the detailed course_content provided.
                 - Develop a 'final_copy' that:
-                    - Constructs a new narrative structure to dynamically emphasize key points.
-                    - Utilizes engaging and persuasive language to captivate the newsletter's audience.
-                    - Highlights practical applications like cloud provisioning and system roles, making them relatable and appealing.
-                - Ensure the 'final_copy' complements the existing 'summary', providing a clear, comprehensive, yet succinct depiction of the assessment's value.
-                - Retain the original 'summary' in its entirety to serve as a reference or for other purposes.
+                    - Restructures the content to effectively highlight key points and takeaways.
+                    - Uses clear, concise, and technically precise language to communicate the assessment's value to the newsletter's readers.
+                    - Emphasizes the practical benefits of the assessment, such as identifying skill gaps and guiding professional development, making them relevant and accessible to the target audience.
+                    - Adopts a tone similar to Red Hat's official skills assessment materials - authoritative, informative, and focused on customer success.
+                - Ensure the 'final_copy' complements the existing 'summary', providing a comprehensive yet succinct overview of the assessment.
+                - Retain the original 'summary' unchanged to serve as a reference.
+
+                ## Voice and Tone Guidelines
+                - Write in a voice that reflects Red Hat's brand: knowledgeable, reliable, and customer-centric.
+                - Use a professional tone that is informative and engaging without being overly casual or sales-oriented.
+                - Focus on clearly communicating the value and practical applications of the skills assessment.
+                - Example of desired tone: "Gain insights into your Red Hat skills with our comprehensive Skills Assessment. This assessment covers key areas such as [key topics], helping you identify strengths and areas for improvement. By completing this assessment, you'll receive a detailed report with personalized recommendations to guide your learning journey. Whether you're a [target audience], this assessment is a valuable tool to benchmark your skills, set professional development goals, and unlock your full potential with Red Hat technologies."
 
                 ## Expected Output Format
                 Return the completed and updated `assessment_details` dictionary in the specified JSON format:
@@ -241,8 +262,12 @@ class RedHatNewsletterCrewTasks:
             agent=agent
         )
 
-    def summarize_blog_task(self, agent, blog_channel, blog_key, blog_url):
-        blog_details = get_blog_details(blog_url)
+    def summarize_rh_summit_blog_task(self, agent, target_date):
+
+        blog_key = "summit_blog"
+        blog_channel = "Red Hat Summit 2024"
+
+        blog_details = get_blog_details_from_url(target_date)
         if not blog_details:
             logging.error(f"Failed to fetch or parse {blog_channel} blog.")
             return None
@@ -278,7 +303,11 @@ class RedHatNewsletterCrewTasks:
             agent=agent
         )
     
-    def copywrite_blog_task(self, agent, blog_channel, blog_key):
+    def copywrite_rh_summit_blog_task(self, agent):
+
+        blog_key = "summit_blog"
+        blog_channel = "Red Hat Summit 2024"
+
         blog_details = get_section_from_json(blog_key)
         if not blog_details:
             logging.error(f"Failed to fetch or parse {blog_channel} blog.")
@@ -315,8 +344,12 @@ class RedHatNewsletterCrewTasks:
             agent=agent
         )
 
-    def summarize_video_task(self, agent, video_channel, video_key, video_url):
-        video_details = get_video_details(video_url)
+    def summarize_rh_summit_video_task(self, agent, target_date):
+
+        video_key = "summit_video"
+        video_channel = "Red Hat Summit 2024"
+
+        video_details = get_video_details_from_url(target_date)
         if not video_details:
             logging.error(f"Failed to fetch or parse {video_channel} video.")
             return None
@@ -352,7 +385,159 @@ class RedHatNewsletterCrewTasks:
             agent=agent
         )
     
-    def copywrite_video_task(self, agent, video_channel, video_key):
+    def copywrite_rh_summit_video_task(self, agent):
+
+        video_key = "summit_video"
+        video_channel = "Red Hat Summit 2024"
+
+        video_details = get_section_from_json(video_key)
+        if not video_details:
+            logging.error(f"Failed to fetch or parse {video_channel} video.")
+            video_details = {}
+        
+        # Update the summary in the video details
+        video_details['final_copy'] = "*newly created final_copy goes here*"
+        expected_output = json.dumps({"data": {video_key: video_details}}, indent=4)
+
+        return Task(
+            description=dedent(f"""
+                # Red Hat Newsletter Crew: Enhance the Summary of the {video_channel} Blog
+
+                ## Objective
+                Create a compelling 'final_copy' of the Red Hat {video_channel} Blog to include in the weekly newsletter.
+
+                ## Instructions
+                1. Review the detailed Red Hat {video_channel} Blog information.
+                2. Extract and enhance the key points from the Red Hat {video_channel} Blog summary, content, and description.
+                3. Incorporate the new 'final_copy' into {video_details['final_copy']}.
+                4. Ensure the entire `{video_key}` dictionary, with all updated details including the new summary, is correctly formatted and returned in JSON format as described below.
+
+                ## Expected Output Format
+                You are required to return the complete `{video_key}` dictionary with all details, not just the summary. The JSON-formatted output should look like this:
+                ```json
+                {expected_output}
+                ```
+
+                ## Deliverable
+                A fully detailed `{video_key}` dictionary, updated with the new 'final_copy', formatted in JSON, and ready to be included in the weekly newsletter. 
+                **This should include the title, description, content, and all other relevant fields updated as necessary.**
+                """),
+            expected_output=expected_output,
+            agent=agent
+        )
+    
+    def summarize_blog_from_feed_task(self, agent, blog_channel, blog_key, blog_url):
+        blog_details = get_blog_details_from_feed(blog_url)
+        if not blog_details:
+            logging.error(f"Failed to fetch or parse {blog_channel} blog.")
+            return None
+        
+        # Update the summary in the blog details
+        blog_details['summary'] = "*newly created summary goes here*"
+        expected_output = json.dumps({"data": {blog_key: blog_details}}, indent=4)
+    
+        return Task(
+            description=dedent(f"""
+                # Red Hat Newsletter Crew: Summarize {blog_channel} Blog
+
+                ## Objective
+                Create a concise summary of the {blog_channel} Blog to include in the weekly newsletter.
+
+                ## Instructions
+                1. Review the detailed {blog_channel} Blog information.
+                2. Extract and summarize the key points from the {blog_channel} Blog title and description.
+                3. Incorporate the new summary into the `blog_details['summary']`.
+                4. Ensure the entire `{blog_key}` dictionary, with all updated details including the new summary, is correctly formatted and returned in JSON format as described below.
+
+                ## Expected Output Format
+                You are required to return the complete `{blog_key}` dictionary with all details, not just the summary. The JSON-formatted output should look like this:
+                ```json
+                {expected_output}
+                ```
+
+                ## Deliverable
+                A fully detailed `{blog_key}` dictionary, updated with the new summary, formatted in JSON, and ready to be included in the weekly newsletter. 
+                **This should include the title, description, summary, and all other relevant fields updated as necessary.**
+            """),
+            expected_output=expected_output,
+            agent=agent
+        )
+    
+    def copywrite_blog_from_feed_task(self, agent, blog_channel, blog_key):
+        blog_details = get_section_from_json(blog_key)
+        if not blog_details:
+            logging.error(f"Failed to fetch or parse {blog_channel} blog.")
+            blog_details = {}
+        
+        # Update the summary in the blog details
+        blog_details['final_copy'] = "*newly created final_copy goes here*"
+        expected_output = json.dumps({"data": {blog_key: blog_details}}, indent=4)
+
+        return Task(
+            description=dedent(f"""
+                # Red Hat Newsletter Crew: Enhance the Summary of the {blog_channel} Blog
+
+                ## Objective
+                Create a compelling 'final_copy' of the Red Hat {blog_channel} Blog to include in the weekly newsletter.
+
+                ## Instructions
+                1. Review the detailed Red Hat {blog_channel} Blog information.
+                2. Extract and enhance the key points from the Red Hat {blog_channel} Blog title, description, and summary.
+                3. Incorporate the new 'final_copy' into {blog_details['final_copy']}.
+                4. Ensure the entire `{blog_key}` dictionary, with all updated details including the new 'final_copy', is correctly formatted and returned in JSON format as described below.
+
+                ## Expected Output Format
+                You are required to return the complete `{blog_key}` dictionary with all details, not just the summary. The JSON-formatted output should look like this:
+                ```json
+                {expected_output}
+                ```
+
+                ## Deliverable
+                A fully detailed `{blog_key}` dictionary, updated with the new 'final_copy', formatted in JSON, and ready to be included in the weekly newsletter. 
+                **This should include the title, description, summary, and all other relevant fields updated as necessary.**
+                """),
+            expected_output=expected_output,
+            agent=agent
+        )
+
+    def summarize_video_from_feed_task(self, agent, video_channel, video_key, video_url):
+        video_details = get_video_details_from_feed(video_url)
+        if not video_details:
+            logging.error(f"Failed to fetch or parse {video_channel} video.")
+            return None
+        
+        # Update the summary in the video details
+        video_details['summary'] = "*newly created summary goes here*"
+        expected_output = json.dumps({"data": {video_key: video_details}}, indent=4)
+    
+        return Task(
+            description=dedent(f"""
+                # Red Hat Newsletter Crew: Summarize {video_channel} YouTube Video
+
+                ## Objective
+                Create a concise summary of the latest {video_channel} YouTube Video to include in the weekly newsletter.
+
+                ## Instructions
+                1. Review the detailed information about the YouTube video.
+                2. Extract and summarize the key points from the YouTube video title and description.
+                3. Incorporate the new summary into the `video_details['summary']`.
+                4. Ensure the entire `{video_key}` dictionary, with all updated details including the new summary, is correctly formatted and returned in JSON format as described below.
+
+                ## Expected Output Format
+                You are required to return the complete `{video_key}` dictionary with all details, not just the summary. The JSON-formatted output should look like this:
+                ```json
+                {expected_output}
+                ```
+
+                ## Deliverable
+                A fully detailed `{video_key}` dictionary, updated with the new summary, formatted in JSON, and ready to be included in the weekly newsletter. 
+                **This should include the title, description, content, and all other relevant fields updated as necessary.**
+            """),
+            expected_output=expected_output,
+            agent=agent
+        )
+    
+    def copywrite_video_from_feed_task(self, agent, video_channel, video_key):
         video_details = get_section_from_json(video_key)
         if not video_details:
             logging.error(f"Failed to fetch or parse {video_channel} video.")

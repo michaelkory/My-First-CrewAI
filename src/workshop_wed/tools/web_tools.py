@@ -1,13 +1,13 @@
 from bs4 import BeautifulSoup
 from datetime import datetime
-from urllib.parse import urljoin
-import logging, json, pytz
+from pytube import YouTube
+import logging, pytz
 import requests, re
 import feedparser
 
-from tools.csv_tools import find_training_by_date
+from tools.csv_tools import find_summit_video_by_date, find_summit_blog_by_date, find_training_by_date
 
-def get_blog_details(url: str):
+def get_blog_details_from_feed(url: str):
     """
     Fetches the most recent article from an RSS feed.
 
@@ -31,6 +31,29 @@ def get_blog_details(url: str):
         }
     else:
         return None
+
+def get_blog_details_from_url(date: str):
+    blog_url = find_summit_blog_by_date(date)
+
+    # Send a GET request to the URL
+    response = requests.get(blog_url)
+    
+    # Parse the HTML content using BeautifulSoup
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # Extract the publication date
+    published_tag = soup.find('meta', attrs={'name': 'last-publish-date'})
+
+    # Extract the title, description, publication date, and URL
+    details = {
+        'title': soup.find('meta', property='og:title')['content'],
+        'description': soup.find('meta', property='og:description')['content'],
+        'published': published_tag['content'] if published_tag else None,
+        'link': soup.find('meta', property='og:url')['content']
+    }
+    
+    # Return the details in a dictionary
+    return details
 
 def get_training_details(target_date: str):
     training_url = find_training_by_date(target_date)
@@ -86,7 +109,7 @@ def get_training_details(target_date: str):
         logging.error(f"An error occurred while parsing the training page: {e}")
         return None
 
-def get_video_details(url: str):
+def get_video_details_from_feed(url: str):
     """
     Extracts details of a YouTube video.
     Returns a dictionary with these details.
@@ -105,6 +128,33 @@ def get_video_details(url: str):
         }
     else:
         return None
+
+def get_video_details_from_url(date: str):
+    video_url = find_summit_video_by_date(date)
+    
+    # Create a YouTube object
+    yt = YouTube(video_url)
+    
+    # Send a GET request to the video URL
+    response = requests.get(video_url)
+    
+    # Parse the HTML content using BeautifulSoup
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    # Extract the published date
+    published_date = soup.find('meta', itemprop='datePublished')['content']
+    
+    # Extract the description using BeautifulSoup
+    description_tag = soup.find('meta', property='og:description')
+    description = description_tag['content'] if description_tag else None
+    
+    # Return the details in a dictionary
+    return {
+        'title': yt.title,
+        'description': description,
+        'published': published_date,
+        'link': video_url
+    }
 
 def get_workshop_by_date(url: str, target_date: str) -> str:
     """
@@ -141,15 +191,16 @@ def get_workshop_by_date(url: str, target_date: str) -> str:
     
     return None
 
-def get_workshop_details(target_date: str):
-    workshop_url = get_workshop_by_date("https://www.redhat.com/en/events/na-workshops-labs", target_date)
+def get_workshop_details(target_date: str, target_url: str):
+    if not target_url:
+        target_url = get_workshop_by_date("https://www.redhat.com/en/events/na-workshops-labs", target_date)
 
-    if not workshop_url:
+    if not target_url:
         logging.error(f"No workshop found for the date: {target_date}")
         return None
     
     try:
-        response = requests.get(workshop_url)
+        response = requests.get(target_url)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -203,7 +254,7 @@ def get_workshop_details(target_date: str):
             "overview": overview_text,
             "date": workshop_date,
             "time": workshop_time,
-            "registration": workshop_url
+            "registration": target_url
         }
     except requests.RequestException as e:
         logging.error(f"Failed to retrieve the page: {e}")

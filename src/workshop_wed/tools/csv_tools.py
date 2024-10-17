@@ -18,7 +18,7 @@ def find_assessment_by_date(target_date: str) -> str:
         The CSV must have at least two columns: 'Date' and 'Assessment Title', where 'Date' is expected
         to be in 'MM/DD/YYYY' format.
     """
-    file_path = 'src/workshop_wed/resources/assessment.csv'  # Hardcoded path to the CSV file
+    file_path = 'src/workshop_wed/resources/workshop_wednesday.csv'  # Hardcoded path to the CSV file
     try:
         # Read the CSV with date parsing directly in the read_csv call
         courses_df = pd.read_csv(file_path, parse_dates=['Date'], date_parser=lambda x: pd.to_datetime(x.strip(), format='%m/%d/%y', errors='coerce'))
@@ -30,6 +30,68 @@ def find_assessment_by_date(target_date: str) -> str:
             return matching_course['Assessment Title'].iloc[0]
     except Exception as e:
         logging.error(f"An error occurred while trying to fetch the assessment URL: {str(e)}")
+    return ""
+
+@tool
+def find_summit_blog_by_date(target_date: str) -> str:
+    """
+    Retrieves the URL for a Summit Blog that matches a given date from a hardcoded CSV file.
+
+    Args:
+        target_date (str): The specific date to find the matching Summit Blog. 
+                           The date should be in the format 'MM/DD/YY'.
+
+    Returns:
+        str: The URL of the course if a match is found; otherwise, an empty string.
+
+    Notes:
+        This function reads from a CSV file located at 'src/workshop_wed/resources/workshop_wednesday.csv'.
+        The CSV must have at least two columns: 'Date' and 'Summit Blog', where 'Date' is expected
+        to be in 'MM/DD/YY' format.
+    """
+    file_path = 'src/workshop_wed/resources/workshop_wednesday.csv'
+    try:
+        # Read the CSV with date parsing directly in the read_csv call
+        courses_df = pd.read_csv(file_path, parse_dates=['Date'], date_parser=lambda x: pd.to_datetime(x.strip(), format='%m/%d/%y', errors='coerce'))
+        # Convert the target date similarly
+        target_date_parsed = pd.to_datetime(target_date.strip(), format='%m/%d/%y', errors='coerce')
+        matching_course = courses_df[courses_df['Date'] == target_date_parsed]
+
+        if not matching_course.empty:
+            return matching_course['Summit Blog'].iloc[0]
+    except Exception as e:
+        logging.error(f"An error occurred while trying to fetch the Summit Blog URL: {str(e)}")
+    return ""
+
+@tool
+def find_summit_video_by_date(target_date: str) -> str:
+    """
+    Retrieves the URL for a Summit Video that matches a given date from a hardcoded CSV file.
+
+    Args:
+        target_date (str): The specific date to find the matching Summit Video. 
+                           The date should be in the format 'MM/DD/YY'.
+
+    Returns:
+        str: The URL of the course if a match is found; otherwise, an empty string.
+
+    Notes:
+        This function reads from a CSV file located at 'src/workshop_wed/resources/workshop_wednesday.csv'.
+        The CSV must have at least two columns: 'Date' and 'Summit Video', where 'Date' is expected
+        to be in 'MM/DD/YY' format.
+    """
+    file_path = 'src/workshop_wed/resources/workshop_wednesday.csv'
+    try:
+        # Read the CSV with date parsing directly in the read_csv call
+        courses_df = pd.read_csv(file_path, parse_dates=['Date'], date_parser=lambda x: pd.to_datetime(x.strip(), format='%m/%d/%y', errors='coerce'))
+        # Convert the target date similarly
+        target_date_parsed = pd.to_datetime(target_date.strip(), format='%m/%d/%y', errors='coerce')
+        matching_course = courses_df[courses_df['Date'] == target_date_parsed]
+
+        if not matching_course.empty:
+            return matching_course['Summit Video'].iloc[0]
+    except Exception as e:
+        logging.error(f"An error occurred while trying to fetch the Summit Blog URL: {str(e)}")
     return ""
 
 @tool
@@ -49,7 +111,7 @@ def find_training_by_date(target_date: str) -> str:
         The CSV must have at least two columns: 'Date' and 'Training URL', where 'Date' is expected
         to be in 'MM/DD/YY' format.
     """
-    file_path = 'src/workshop_wed/resources/training.csv'
+    file_path = 'src/workshop_wed/resources/workshop_wednesday.csv'
     try:
         # Read the CSV with date parsing directly in the read_csv call
         courses_df = pd.read_csv(file_path, parse_dates=['Date'], date_parser=lambda x: pd.to_datetime(x.strip(), format='%m/%d/%y', errors='coerce'))

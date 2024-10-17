@@ -1,0 +1,55 @@
+# agent_list.yaml
+
+customer_current_state_agent:
+  summary: Analyze customer's current state, including business drivers, strategies, and initiatives.
+
+red_hat_strategic_value_agent:
+  summary: Assess strategic value that Red Hat can provide to the customer based on their current state and needs.
+
+customer_objectives_agent:
+  summary: Document customer's key objectives, challenges, and initiatives for the account plan.
+
+customer_growth_trajectory_agent:
+  summary: Evaluate customer's growth trajectory and competitive landscape to inform the account plan.
+
+swot_analysis_agent:
+  summary: Conduct SWOT analysis to assess Red Hat's positioning with the customer.
+
+it_infrastructure_review_agent:
+  summary: Review customer's IT infrastructure and platforms, including server and cloud operating systems.
+
+server_and_cloud_os_agent:
+  summary: Analyze customer's server and cloud operating systems, including major operating systems in use and Linux distributions.
+
+major_operating_systems_agent:
+  summary: Review customer's major operating systems in use, including on-premise and cloud.
+
+linux_distributions_agent:
+  summary: Analyze customer's Linux distributions and strategy, including systems management and automation solutions.
+
+cloud_native_infrastructure_agent:
+  summary: Review customer's cloud-native infrastructure, including cloud strategy and Kubernetes and container platform usage.
+
+application_migration_agent:
+  summary: Analyze customer's application migration and modernization strategy, including software supply chain and CI/CD practices.
+
+automation_tools_agent:
+  summary: Assess customer's current automation tools and practices, as well as their automation strategy and maturity.
+
+virtualization_strategy_agent:
+  summary: Evaluate customer's virtualization strategy and workloads.
+
+container_platform_agent:
+  summary: Review customer's container platform management and security practices.
+
+key_applications_agent:
+  summary: Analyze customer's key applications and initiatives, including software supply chain and CI/CD practices.
+
+cloud_native_development_agent:
+  summary: Assess customer's cloud-native development landscape, including application migration and modernization strategy.
+
+mission_critical_it_automation_agent:
+  summary: Evaluate customer's mission-critical IT automation, including current automation tools and practices.
+
+automation_strategy_agent:
+  summary: Review customer's automation strategy and maturity, including executive buy-in and cross-functional alignment.

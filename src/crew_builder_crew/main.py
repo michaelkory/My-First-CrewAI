@@ -36,37 +36,38 @@ print('-------------------------------')
 # new_crew_details = input("Describe in detail the intended output of the crew.\n")
 new_crew_purpose = '''
 ## Crew Purpose
-Create an engaging weekly newsletter to provide Red Hat customers with valuable, recent, and relevant content, focusing on upcoming events, product updates, free resources, and helpful tips.
+An effective account plan identifies and aligns our understanding of customer's business drivers, strategies, and initiatives to our business value, and serves as a tool to build and activate relationships with the customer and their ecosystem in order to grow business and customer success. 
 ''',
 new_crew_details = '''
-## Crew Details
-- Target audience: Red Hat customers
-- Newsletter frequency: Weekly
-- Key content:
-  - Upcoming Red Hat Workshop Wednesday events from the past week
-  - Free training courses and exams available now
-  - Free skills assessment to help customers determine where to start their training journey
-  - The latest news on Red Hat Ansible Automation Platform from the past week
-  - The latest video from the Ansible YouTube channel from the past week
-  - The latest news and information on Red Hat OpenShift released within the last week
-  - The latest video from OpenShift YouTube channel released within the last week
-  - All the recent news customers need about Red Hat Enterprise Linux
-  - The latest video from RHEL YouTube channel released within the last week
+Your task is to create a comprehensive account plan for a key customer. 
 
-## Instructions
-1. Scrape the details for the next workshop: https://www.redhat.com/en/events/na-workshops-labs
-2. Collect the details for the next free training course from a local CSV.
-3. Collect the details for the next skills assessment from a local CSV.
-4. Scrape the latest news on the Ansible Automation Platform: https://www.redhat.com/en/blog/channel/red-hat-ansible-automation
-5. Scrape the latest video from the Ansible YouTube channel: https://www.redhat.com/en/blog/channel/red-hat-ansible-automation
-6. Scrape the latest news on the Red Hat OpenShift: https://www.redhat.com/en/blog/channel/red-hat-openshift
-7. Scrape the latest video from OpenShift YouTube channel: https://www.redhat.com/en/blog/channel/red-hat-openshift
-8. Scrape the latest news on the Red Hat Enterprise Linux: https://www.redhat.com/en/blog/channel/red-hat-enterprise-linux
-9. Scrape the latest video from RHEL YouTube channel: https://www.redhat.com/en/blog/channel/red-hat-enterprise-linux
-10. Gather the output from all the previous tasks into a well-formatted newsletter.
-
-## Deliverables
-- Weekly Red Hat newsletter
+The plan should include:
+- A Customer View section summarizing their current state, needs, and priorities
+- An overview of the strategic value Red Hat can provide to the customer
+- Details on the customer's objectives, challenges, and initiatives 
+- An assessment of the customer's growth trajectory and competitive landscape
+- A SWOT analysis of Red Hat's positioning with the customer
+- A technical landscape review of the customer's IT infrastructure and platforms, including:
+    - Server and Cloud Operating System TDP: 
+    - Major operating systems in use (on-premise and cloud)
+    - Linux distributions and strategy
+    - Systems management and automation solutions 
+    - Workload environments targeted for RHEL
+    - Cloud Native Infrastructure TDP:
+    - Cloud strategy (on-prem, public, hybrid)
+    - Kubernetes and container platform usage
+    - Virtualization strategy and workloads
+    - Container platform management and security
+    - Application Platform TDP: 
+    - Application migration/modernization strategy
+    - Key customer applications and initiatives
+    - Software supply chain and CI/CD practices
+    - Cloud-native development landscape
+    - Mission Critical IT Automation TDP:
+    - Current automation tools and practices 
+    - Workloads and processes being automated
+    - Automation strategy and maturity
+    - Executive buy-in and cross-functional alignment
 '''
 
 # Create Tasks
@@ -142,9 +143,8 @@ crew_builder_crew = Crew(
 		create_main_py_task,review_main_py_task
 	],
     process=Process.sequential,
-	manager_llm = llms.g_llama3,
 	verbose=2,
-	max_rpm=2,
+	max_rpm=1,
     memory=True,
     cache=True
 )

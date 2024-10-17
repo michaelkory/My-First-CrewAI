@@ -1,0 +1,55 @@
+# task_list.yaml
+
+analyze_customer_current_state_and_needs_task:
+  summary: Analyze the customer's current state, including their business drivers, strategies, and initiatives to understand their needs.
+
+assess_red_hat_strategic_value_task:
+  summary: Assess the strategic value that Red Hat can provide to the customer based on their current state and needs.
+
+document_customer_objectives_challenges_and_initiatives_task:
+  summary: Document the customer's key objectives, challenges, and initiatives that should be addressed in the account plan.
+
+evaluate_customer_growth_trajectory_and_competitive_landscape_task:
+  summary: Evaluate the customer's growth trajectory and competitive landscape to inform the account plan.
+
+conduct_swot_analysis_of_red_hat_positioning_task:
+  summary: Conduct a SWOT analysis to assess Red Hat's positioning with the customer.
+
+review_customer_it_infrastructure_and_platforms_task:
+  summary: Review the customer's IT infrastructure and platforms, including server and cloud operating systems, Linux distributions, and cloud-native technologies.
+
+analyze_customer_server_and_cloud_operating_systems_task:
+  summary: Analyze the customer's server and cloud operating systems, including major operating systems in use and Linux distributions.
+
+review_customer_major_operating_systems_task:
+  summary: Review the customer's major operating systems in use, including on-premise and cloud.
+
+analyze_customer_linux_distributions_and_strategy_task:
+  summary: Analyze the customer's Linux distributions and strategy, including systems management and automation solutions.
+
+review_customer_cloud_native_infrastructure_task:
+  summary: Review the customer's cloud-native infrastructure, including cloud strategy and Kubernetes and container platform usage.
+
+analyze_customer_application_migration_and_modernization_strategy_task:
+  summary: Analyze the customer's application migration and modernization strategy, including software supply chain and CI/CD practices.
+
+assess_customer_automation_tools_and_practices_task:
+  summary: Assess the customer's current automation tools and practices, as well as their automation strategy and maturity.
+
+evaluate_customer_virtualization_strategy_task:
+  summary: Evaluate the customer's virtualization strategy and workloads.
+
+review_customer_container_platform_management_and_security_task:
+  summary: Review the customer's container platform management and security practices.
+
+analyze_customer_key_applications_and_initiatives_task:
+  summary: Analyze the customer's key applications and initiatives, including software supply chain and CI/CD practices.
+
+assess_customer_cloud_native_development_landscape_task:
+  summary: Assess the customer's cloud-native development landscape, including application migration and modernization strategy.
+
+evaluate_customer_mission_critical_it_automation_task:
+  summary: Evaluate the customer's mission-critical IT automation, including current automation tools and practices.
+
+review_customer_automation_strategy_and_maturity_task:
+  summary: Review the customer's automation strategy and maturity, including executive buy-in and cross-functional alignment.

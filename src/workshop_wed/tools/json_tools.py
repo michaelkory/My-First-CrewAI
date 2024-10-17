@@ -89,6 +89,8 @@ def initialize_json_file():
         "workshop": {},
         "training": {},
         "assessment": {},
+        "summit_blog": {},
+        "summit_video": {},
         "ansible_blog": {},
         "ansible_video": {},
         "openshift_blog": {},
